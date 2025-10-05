@@ -1,11 +1,11 @@
-import { Component } from 'react';
-import {createBrowserRouter, Navigate} from 'react-router-dom';
-import Main from '../pages/main';
-import Home from '../pages/home';
-import Mall from '../pages/mall';
-import User from '../pages/user/user';
-import PageOne from '../pages/others/pageOne';
-import PageTwo from '../pages/others/pageTwo';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+import Main from '@/pages/main';
+import Home from '@/pages/home';
+import Mall from '@/pages/mall';
+import User from '@/pages/user/user';
+import PageOne from '@/pages/others/pageOne';
+import PageTwo from '@/pages/others/pageTwo';
+
 const routes = [
   {
     path: '/',
@@ -46,4 +46,5 @@ const routes = [
     ]
   }
 ];
+
 export default createBrowserRouter(routes);

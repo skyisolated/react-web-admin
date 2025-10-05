@@ -1,10 +1,10 @@
 import React from 'react'
 import './index.css'
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
-    <div className="home-page">
-      Home页面
+    <div className='home'>
+      <h1>首页</h1>
     </div>
   )
 }
