@@ -1,38 +1,225 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* 全局样式 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Logo 样式 */
+.logo {
+  height: 64px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+
+.logo-expanded {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.logo-img {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.logo-img-collapsed {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
+
+.logo-text {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 布局相关样式 */
+.layout-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 220px;
+  background: #001529;
+  color: white;
+  transition: all 0.3s ease;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 64px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  z-index: 10;
+}
+
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.content-wrapper {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background: #f0f2f5;
+}
+
+.page-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 4px;
+  min-height: calc(100vh - 112px);
+}
+
+/* 菜单样式 */
+.menu {
+  background: transparent;
+  border-right: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.menu-item {
+  color: rgba(255, 255, 255, 0.65);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.menu-item:hover,
+.menu-item-active {
+  color: #fff;
+  background-color: #1890ff !important;
+}
+
+/* 面包屑导航 */
+.breadcrumb {
+  margin-bottom: 16px;
+}
+
+/* 卡片样式 */
+.card {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #000;
+}
+
+/* 表格样式 */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px 8px;
+  text-align: left;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.table th {
+  background: #fafafa;
+  font-weight: 500;
+}
+
+/* 按钮样式 */
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: #1890ff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #40a9ff;
+}
+
+.btn-danger {
+  background: #ff4d4f;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: #ff7875;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .sidebar:not(.collapsed) {
+    width: 80px;
+  }
+
+  .header {
+    padding: 0 12px;
+  }
+
+  .content-wrapper {
+    padding: 12px;
   }
 }
