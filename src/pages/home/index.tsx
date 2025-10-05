@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.css'
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <div className='home'>
       <h1>首页</h1>

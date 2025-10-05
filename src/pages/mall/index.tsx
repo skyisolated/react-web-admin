@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Mall: React.FC = () => {
+const Mall = () => {
   return (
     <div>
       <h1>商品管理页面</h1>

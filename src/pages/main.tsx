@@ -1,21 +1,43 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import Aside from './components/Aside';
+import React, { useState } from 'react';
 
-const Main: React.FC = () => {
+import { Button, Layout, Menu, theme } from 'antd';
+import { Outlet } from 'react-router-dom';
+import {
+  MenuFoldOutlined,
+  MenuUnfoldOutlined
+} from '@ant-design/icons';
+import Aside from './components/Aside';
+import MyHeader from './components/Header';
+const { Header, Sider, Content } = Layout;
+
+const App: React.FC = () => {
+
+  const {
+    token: { colorBgContainer, borderRadiusLG },
+  } = theme.useToken();
+
   return (
-    <div className="layout-container">
+    <Layout className="layout-container">
       <Aside></Aside>
-      <div className="main-content">
-        <div className="header"></div>
-        <div className="content-wrapper">
+      <Layout className="main-content">
+        <MyHeader></MyHeader>
+        <Content
+          style={{
+            margin: '24px 16px',
+            padding: 24,
+            minHeight: 280,
+            background: colorBgContainer,
+            borderRadius: borderRadiusLG,
+          }}
+          className="content-wrapper"
+        >
           <div className="page-content">
             <Outlet />
           </div>
-        </div>
-      </div>
-    </div>
+        </Content>
+      </Layout>
+    </Layout>
   );
 };
 
-export default Main;
+export default App;

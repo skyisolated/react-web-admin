@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Menu, Layout} from 'antd';
 import logo from '@/assets/logo.png';
 import MenuConfig from '@/config';
@@ -36,6 +36,7 @@ const items: MenuItemType[] = generateMenuItems(MenuConfig);
 
 const Aside: React.FC = () => {
   const { Sider } = Layout;
+  const [collapsed, setCollapsed] = useState(false);
   return (
     <Sider 
         trigger={null} 
@@ -43,7 +44,14 @@ const Aside: React.FC = () => {
         className="sidebar"
       >
         <div className="logo">
-          <img src={logo} alt="Logo" className="logo-img-collapsed" />
+          {collapsed ? (
+            <img src={logo} alt="Logo" className="logo-img-collapsed" />
+          ) : (
+            <div className="logo-expanded">
+              <img src={logo} alt="Logo" className="logo-img" />
+              <h1 className="logo-text">管理系统</h1>
+            </div>
+          )}
         </div>
         <Menu
           theme="dark"
