@@ -4,7 +4,9 @@ import logo from '@/assets/logo.png';
 import MenuConfig from '@/config';
 import * as Icon from '@ant-design/icons';
 import type { MenuItemType } from 'antd/es/menu/interface';
-
+import { AsideProps } from '@/types/common';
+// 如果是一些固定的静态数据，定义在函数组件外就行
+// 反之如果是需要与state打交道的数据，就定义在函数组件里
 const icon2Element = (iconName: string) =>{
   const IconComponent = Icon[iconName as keyof typeof Icon];
   // 检查是否是有效的图标组件
@@ -34,17 +36,17 @@ const generateMenuItems = (menuConfig: any[]): MenuItemType[] => {
 
 const items: MenuItemType[] = generateMenuItems(MenuConfig);
 
-const Aside: React.FC = () => {
+const Aside: React.FC<AsideProps> = (props) => {
   const { Sider } = Layout;
-  const [collapsed, setCollapsed] = useState(false);
+  const {isCollapse} = props;
   return (
     <Sider 
         trigger={null} 
-        collapsible 
+        collapsed={isCollapse} 
         className="sidebar"
       >
         <div className="logo">
-          {collapsed ? (
+          {isCollapse ? (
             <img src={logo} alt="Logo" className="logo-img-collapsed" />
           ) : (
             <div className="logo-expanded">
