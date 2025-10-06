@@ -58,7 +58,7 @@ const Aside: React.FC<AsideProps> = (props) => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['1']}
+          defaultSelectedKeys={['/home']}
           items={items}
           className="menu"
         />

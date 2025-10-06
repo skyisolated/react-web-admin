@@ -1,11 +1,20 @@
 import React from 'react'
 import './index.css'
+import { Row, Col, Card } from 'antd'
 
 const Home = () => {
   return (
-    <div className='home'>
-      <h1>首页</h1>
-    </div>
+    <Row>
+      <Col span={8}>
+        <Card
+          hoverable
+        >
+        </Card>
+      </Col>  
+      <Col span={16}>
+        11111
+      </Col>
+    </Row>
   )
 }
 

@@ -28,26 +28,28 @@ const App: React.FC = () => {
     isCollapse
   };
   return (
-    <Layout className="layout-container">
-      <Aside {...asideItems}></Aside>
-      <Layout className="main-content">
-        <MyHeader {...headerItems}></MyHeader>
-        <Content
-          style={{
-            margin: '24px 16px',
-            padding: 24,
-            minHeight: 280,
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-          }}
-          className="content-wrapper"
-        >
-          <div className="page-content">
-            <Outlet />
-          </div>
-        </Content>
-      </Layout>
-    </Layout>
+    // <Layout className="layout-container">
+    //   <Aside {...asideItems}></Aside>
+    //   <Layout className="main-content">
+    //     <MyHeader {...headerItems}></MyHeader>
+    //     <Content
+    //       style={{
+    //         margin: '24px 16px',
+    //         padding: 24,
+    //         minHeight: 280,
+    //         background: colorBgContainer,
+    //         borderRadius: borderRadiusLG,
+    //       }}
+    //       className="content-wrapper"
+    //     >
+    //         <Outlet />
+    //     </Content>
+    //   </Layout>
+    // </Layout>
+    <div>
+      main首页
+      <Outlet></Outlet>
+    </div>
   );
 };
 
