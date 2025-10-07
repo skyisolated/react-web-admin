@@ -3,6 +3,7 @@ import './App.css';
 import Main from './pages/main';
 import { RouterProvider } from 'react-router-dom';
 import router from '@/router';
+import "@/mock/home";
 function App() {
   return (
     <div className="app">

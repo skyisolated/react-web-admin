@@ -2,19 +2,11 @@ import React, { useState } from 'react'
 import { Menu, Layout} from 'antd';
 import logo from '@/assets/logo.png';
 import MenuConfig from '@/config';
-import * as Icon from '@ant-design/icons';
 import type { MenuItemType } from 'antd/es/menu/interface';
 import { AsideProps } from '@/types/common';
+import { icon2Element } from '@/utils/common';
 // 如果是一些固定的静态数据，定义在函数组件外就行
 // 反之如果是需要与state打交道的数据，就定义在函数组件里
-const icon2Element = (iconName: string) =>{
-  const IconComponent = Icon[iconName as keyof typeof Icon];
-  // 检查是否是有效的图标组件
-  if (IconComponent) {
-    return React.createElement(IconComponent as any);
-  }
-  return null;
-}
 
 // 递归生成菜单项
 const generateMenuItems = (menuConfig: any[]): MenuItemType[] => {

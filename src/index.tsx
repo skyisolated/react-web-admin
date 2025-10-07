@@ -9,6 +9,10 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+  /**
+   * StrictMode作用是帮助在开发过程中尽早发现组件中的常见错误
+   * 它会将组件重新渲染一次，因此有时你会发现有些请求内的console.log()打印了两次
+   */
   <React.StrictMode>
     {/* 挂载store，让全局都能访问到store中的变量 */}
     <Provider store={store}>
