@@ -1,8 +1,7 @@
 import { Phone } from "@/types/home";
 import { BASE_URL } from "@/utils/constant";
 import Mock from "mockjs";
-const prefix = BASE_URL;
-Mock.mock(prefix + "/home-data", "get", () => {
+Mock.mock(/home-data/, "get", () => {
   const phones: Phone[] = [
     {name: "oppo", todayPurchase: "500", monthlyPurchase: "3500", totalPurchase: "22000"},
     {name: "vivo", todayPurchase: "300", monthlyPurchase: "2200", totalPurchase: "24000"},

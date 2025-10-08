@@ -5,6 +5,7 @@ import MenuConfig from '@/config';
 import type { MenuItemType } from 'antd/es/menu/interface';
 import { AsideProps } from '@/types/common';
 import { icon2Element } from '@/utils/common';
+import { useNavigate } from 'react-router-dom';
 // 如果是一些固定的静态数据，定义在函数组件外就行
 // 反之如果是需要与state打交道的数据，就定义在函数组件里
 
@@ -31,6 +32,10 @@ const items: MenuItemType[] = generateMenuItems(MenuConfig);
 const Aside: React.FC<AsideProps> = (props) => {
   const { Sider } = Layout;
   const {isCollapse} = props;
+  const navigate = useNavigate();
+  const goto = (e: any)=>{
+    navigate(e.key);
+  }
   return (
     <Sider 
         trigger={null} 
@@ -53,6 +58,7 @@ const Aside: React.FC<AsideProps> = (props) => {
           defaultSelectedKeys={['/home']}
           items={items}
           className="menu"
+          onClick={goto}
         />
       </Sider>
   )

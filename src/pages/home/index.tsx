@@ -5,6 +5,7 @@ import { Row, Col, Card, Table } from 'antd'
 import avatar from "@/assets/avatar.png";
 import { Phone } from '@/types/home';
 import { icon2Element } from '@/utils/common';
+import Echarts from "@/pages/components/Echarts";
 const columns = [
   {
     title: '手机名称',
@@ -119,6 +120,7 @@ const Home = () => {
             ))
           }
         </div>
+        <Echarts />
       </Col>
     </Row>
   )

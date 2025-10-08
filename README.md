@@ -6,6 +6,13 @@
 
 3. 组件本身的需要的变量定义在组件内部，一些静态的可以放在外面。
 
+4. ts的类型通常放在变量名后，但在配合react/vue的钩子函数使用时，类型是放在泛型里的，这点不要忘记。比如
+
+   ```typescript
+   let echartObj = useRef<EChartsType>(null);
+   const [phones, setPhones] = useState<Phone[]>([]);
+   ```
+
    
 
 # 2.路由相关
@@ -36,3 +43,5 @@
 
 4. axios是最近流行的ajax库。
 5. 使用mockjs可以脱离后端自己模拟接口的返回结果。
+
+6. 
