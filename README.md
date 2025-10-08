@@ -44,4 +44,22 @@
 4. axios是最近流行的ajax库。
 5. 使用mockjs可以脱离后端自己模拟接口的返回结果。
 
-6. 
+# 4. 用户页相关
+
+1. 在输入框输入内容后，第一次点击搜索不生效，第二次点击搜索才生效的问题。
+
+   ```react
+   const handleFinish: FormProps<UserQuery>['onFinish'] = (values) => { 
+   setUserQuery(values);
+   // 由于state更新是异步的，因此这里handleSearch不会使用输入的内容搜索，拿到的内容为null
+   // handleSearch();
+   }
+   // 解决方式监听state内容变化，变化了就执行搜索。所谓变化了就是执行了setUserQuery()
+   useEffect(()=>{
+   	handleSearch();
+   }, [userQuery]);
+   ```
+
+2. 编辑的时候要对原纪录做深拷贝，防止影响原纪录。
+
+3. 可以给一个字段设置多种类型，比如string | date，这样在显示和传给后端时做处理。
