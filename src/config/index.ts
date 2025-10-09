@@ -44,15 +44,7 @@ const menuConfig: MenuItemConfig[] = [
         path: '/others/pageTwo',
         name: 'page2',
         label: '页面2',
-        icon: 'SettingOutlined',
-        children: [
-          {
-            path: '/others/pageTwo/pageThree',
-            name: 'page3',
-            label: '页面3',
-            icon: 'SettingOutlined'
-          }
-        ]
+        icon: 'SettingOutlined'
       }
     ]
   }
