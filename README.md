@@ -63,3 +63,38 @@
 2. 编辑的时候要对原纪录做深拷贝，防止影响原纪录。
 
 3. 可以给一个字段设置多种类型，比如string | date，这样在显示和传给后端时做处理。
+
+# 5. 其他
+
+1. 使用`useNavigate()`可进行路由跳转，使用`useDispatch()`可调用redux中的reducer，使用`useSelector()`可以读取redux中的state。
+
+2. react中没有vue中的路由守卫，可以使用组件实现该功能：
+
+   ```react
+   export const RouterAuth: React.FC<{ children: React.ReactNode }> = ({children})=> {
+     const token = localStorage.getItem('token');
+     if(!token) {
+       return <Navigate to="/login" replace/>;
+     }else{
+       return (
+         children
+       )
+     }
+   }
+   
+   // 使用该组件包裹Layout即可    
+   <RouterAuth>
+   <Layout className="layout-container">
+     <Aside {...asideItems}></Aside>
+     <Layout className="main-content">
+       <MyHeader {...headerItems}></MyHeader>
+       <TagList></TagList>
+       <Content>
+           <Outlet />
+       </Content>
+     </Layout>
+   </Layout>
+   </RouterAuth>
+   ```
+
+   

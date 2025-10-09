@@ -11,6 +11,7 @@ import MyHeader from './components/Header';
 import { useSelector } from 'react-redux';
 import { AsideProps, HeaderProps } from '@/types/common';
 import TagList from './components/TagList';
+import { RouterAuth } from './components/RouterAuth';
 const { Header, Sider, Content } = Layout;
 
 const App: React.FC = () => {
@@ -29,6 +30,7 @@ const App: React.FC = () => {
     isCollapse
   };
   return (
+    <RouterAuth>
     <Layout className="layout-container">
       <Aside {...asideItems}></Aside>
       <Layout className="main-content">
@@ -48,6 +50,7 @@ const App: React.FC = () => {
         </Content>
       </Layout>
     </Layout>
+    </RouterAuth>
   );
 };
 

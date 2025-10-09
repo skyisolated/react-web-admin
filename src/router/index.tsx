@@ -5,6 +5,8 @@ import Mall from '@/pages/mall';
 import UserTab from '@/pages/user/user';
 import PageOne from '@/pages/others/pageOne';
 import PageTwo from '@/pages/others/pageTwo';
+import { Component } from 'react';
+import Login from '@/pages/login';
 
 const routes = [
   {
@@ -44,6 +46,10 @@ const routes = [
         ]
       },
     ]
+  },
+  {
+    path: "/login",
+    Component: Login
   }
 ];
 

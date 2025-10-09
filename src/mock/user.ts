@@ -466,3 +466,12 @@ Mock.mock(/users/, "delete", (request: any) => {
     message: "success"
   };
 });
+Mock.mock(/user\/login/, "post", (request: any) => { 
+  return {
+    code: 200,
+    message: "success",
+    data: {
+        token: nanoid()
+    }
+  };
+});

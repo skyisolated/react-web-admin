@@ -1,4 +1,4 @@
-import { User, UserQuery } from "@/types/user";
+import { LoginInfo, User, UserQuery } from "@/types/user";
 import request from "@/utils/request";
 export function getUsers(query?: UserQuery) {
   return request.get(
@@ -22,6 +22,12 @@ export function editUser(user: User) {
 export function deleteUser(user: User) {
   return request.delete(
     "/users",
+    user
+  );
+}
+export function login(user: LoginInfo) {
+  return request.post(
+    "/user/login",
     user
   );
 }

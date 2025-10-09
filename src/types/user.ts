@@ -18,3 +18,8 @@ export interface User {
   // 家庭住址
   address?: string;
 }
+
+export interface LoginInfo {
+  username: string;
+  password: string;
+}
