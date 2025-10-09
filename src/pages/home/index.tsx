@@ -70,7 +70,6 @@ const Home = () => {
   // 钩子函数，在初次加载以及[]中配置的属性变化时加载。类似于vue的onMounted()
   useEffect(()=>{
      getData().then(res=>{
-        console.log(res);
         const {phones} = res.data;
         setPhones(phones);
      });

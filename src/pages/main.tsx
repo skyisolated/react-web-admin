@@ -10,6 +10,7 @@ import Aside from './components/Aside';
 import MyHeader from './components/Header';
 import { useSelector } from 'react-redux';
 import { AsideProps, HeaderProps } from '@/types/common';
+import TagList from './components/TagList';
 const { Header, Sider, Content } = Layout;
 
 const App: React.FC = () => {
@@ -32,6 +33,7 @@ const App: React.FC = () => {
       <Aside {...asideItems}></Aside>
       <Layout className="main-content">
         <MyHeader {...headerItems}></MyHeader>
+        <TagList></TagList>
         <Content
           style={{
             margin: '24px 16px',

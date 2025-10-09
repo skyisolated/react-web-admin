@@ -103,7 +103,6 @@ const columns = [
     getUsers(userQuery).then(res=>{
       setTableData(res.data);
       setLoading(false);
-      console.log(res);
     });
   }
   const handleCancel = ()=>{
